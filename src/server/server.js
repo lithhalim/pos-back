@@ -71,6 +71,13 @@ app.use(ErrorHandeler);
 app.use(NotFound404);
 
 
+//----------------------------------------- Soket Io ------------------------------------------------------//
+
+const Online_Frinds=require("../routes/soket/Online_Frends");
+Online_Frinds(io)
+
+
+
 
 
 
