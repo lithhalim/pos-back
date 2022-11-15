@@ -63,6 +63,29 @@ app.use(invios_Routes)
 const stripe_controlle=require("../controllers/stripe-controllers/stripe-controllers");
 app.post("/create-checkout-session",stripe_controlle)
 
+
+
+//----------------------------------------- Soket Io ------------------------------------------------------//
+
+const Online_Frinds=require("../routes/soket/SoketIo_Routes");
+Online_Frinds(io)
+
+const MassageModel=require("../model/massage-model/massage-model");
+
+
+
+
+
+
+
+
+
+app.get("/getdata",async(req,res)=>{
+  let data=await MassageModel.findAll();
+  res.json(data)
+})
+
+
 //----------------------------------------Error Handeler-----------------------------------------------------//
 const NotFound404=require("../middelware/404-500/404");
 const ErrorHandeler=require("../middelware/404-500/500");
@@ -70,19 +93,8 @@ const ErrorHandeler=require("../middelware/404-500/500");
 app.use(ErrorHandeler);
 app.use(NotFound404);
 
-
-//----------------------------------------- Soket Io ------------------------------------------------------//
-
-const Online_Frinds=require("../routes/soket/Online_Frends");
-Online_Frinds(io)
-
-
-
-
-
-
-
 //----------------------------------------DataBase Connection----------------------------------------------//
+
 
 //Connection With The Database
 const database=require("../database/database");
