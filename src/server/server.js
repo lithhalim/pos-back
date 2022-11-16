@@ -67,9 +67,8 @@ app.post("/create-checkout-session",stripe_controlle)
 
 //----------------------------------------- Soket Io ------------------------------------------------------//
 
-
 // get All Online Frinds Routes 
-const Online_Frinds=require("../routes/soket/SoketIo_Routes");
+const Online_Frinds=require("../routes/soket/1-Online_Routes");
 Online_Frinds(io);
 
 
@@ -98,7 +97,6 @@ app.use(NotFound404);
 
 //Connection With The Database
 const database=require("../database/database");
-const { compareSync } = require('bcrypt');
 async function start(PORT){// WHE MUST RUN DATABASE CONNECTION BEFORE LISTEN TO SERVER
   server.listen(PORT, async() => {
         try {
