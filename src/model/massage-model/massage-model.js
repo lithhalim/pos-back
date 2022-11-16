@@ -2,7 +2,7 @@ const { TEXT,DataTypes } = require("sequelize")
 const database=require("../../database/database");
 
 
-const  Massage_Model=database.define("addMassagess",{
+const  Massage_Model=database.define("massages",{
     Image:{
       type:TEXT
     },
@@ -18,6 +18,9 @@ const  Massage_Model=database.define("addMassagess",{
     text:{
       type:TEXT,
     },
+    time:{
+      type:TEXT
+    }
 })
 
 module.exports=Massage_Model
